@@ -1,0 +1,15 @@
+
+  <body>
+    <h1>Subscribe to Our Mailing List for WolfPack Fitness' New Features and Promotions</h1>
+    <div class="banner">
+        <form #emailForm="ngForm">
+            <label>Email Address: </label>
+            <input id="email" [(ngModel)]="email" name="cemail" 
+            #cemail="ngModel" class="email" type="text" pattern=" "><br>
+            <p *ngIf="cemail.valid">enter a valid email</p>
+            <button [disabled]="emailForm.form.valid" type="submit" 
+            (click)="submitEmail()">Add Me!</button>
+        </form>
+    </div>
+  </body>
+

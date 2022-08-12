@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.banner {
+    margin: 50px auto;
+    width: 50%;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: white;
+}
+
+.email {
+    width: 90%;
+    margin: 10px auto;
+}
+
+button {
+    background-color: #0ff;
+    margin: 10px auto;
+}
+
+p {
+    color: red;
+    font-weight:bolder;
+}
