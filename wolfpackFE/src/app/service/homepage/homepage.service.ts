@@ -12,7 +12,7 @@ export class HomepageService {
   constructor(private http: HttpClient) { }
 
   newClient(email: String): Observable<any> { 
-    return this.http.post<any>(`${this.apiServerUrl}/home/register`, email, {responseType: 'text' as 'json'});
+    return this.http.post<any>(`${this.apiServerUrl}/register`, email, {responseType: 'text' as 'json'});
   }
 }
 

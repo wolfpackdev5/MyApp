@@ -1,0 +1,17 @@
+<p>create-account works!</p>
+<form #accountForm="ngForm" name="accountForm">
+    <h2>Create Account</h2>
+    <label>Email:</label><br>
+    <input id="email" [(ngModel)]="email" type="text" name="email"><br>
+    <label>First Name:</label><br>
+    <input id="firstName" [(ngModel)]="firstName" type="text" name="firstName"><br>
+    <label>Last Name:</label><br>
+    <input id="lastName" [(ngModel)]="lastName" type="text" name="lastName"><br>
+    <label>Your Fitness Goals:</label><br>
+    <input id="bio" [(ngModel)]="bio" type="text" name="bio"><br>
+    <label>Age:</label><br>
+    <input id="age" [(ngModel)]="age" type="number" name="age"><br>
+    <label>Weight (in lbs):</label><br>
+    <input id="weight" [(ngModel)]="weight" type="number" name="weight"><br>
+    <button type="submit" [disabled]="accountForm.form.valid">Submit</button>
+</form>
