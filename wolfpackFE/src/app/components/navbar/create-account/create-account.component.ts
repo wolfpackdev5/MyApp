@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateAccountService } from 'src/app/service/create-account/create-account.service';
-import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import { UntypedFormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-create-account',
@@ -16,7 +16,7 @@ export class CreateAccountComponent implements OnInit {
   age!: number;
   weight!: number;
 
-  accountForm!: FormGroup;
+  accountForm!: UntypedFormGroup;
 
   constructor(private cas: CreateAccountService, /*private fb: FormBuilder*/) {
     //this.myForm();
