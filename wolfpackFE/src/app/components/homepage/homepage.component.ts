@@ -23,7 +23,7 @@ export class HomepageComponent implements OnInit {
     } else {
       alert("not a valid email");
     }
-    //window.location.reload();
+    window.location.reload();
   }
 
 }

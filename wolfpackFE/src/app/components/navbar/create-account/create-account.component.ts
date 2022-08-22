@@ -9,24 +9,14 @@ import { UntypedFormGroup, FormControl, Validators, FormBuilder} from '@angular/
 })
 export class CreateAccountComponent implements OnInit {
   //values for email, name, bio, age, weight
-  email!: string;
-  firstName!: string;
-  lastName!: string;
-  bio!: string;
-  age!: number;
-  weight!: number;
+  email = '';
+  firstName = '';
+  lastName = '';
+  bio = '';
+  age = 0;
+  weight = 0;
 
-  accountForm!: UntypedFormGroup;
-
-  constructor(private cas: CreateAccountService, /*private fb: FormBuilder*/) {
-    //this.myForm();
-   }
-
-   /*myForm() {
-     this.accountForm = this.fb.group({
-
-     })
-   }*/
+  constructor(private cas: CreateAccountService) {}
 
   ngOnInit(): void {
   }

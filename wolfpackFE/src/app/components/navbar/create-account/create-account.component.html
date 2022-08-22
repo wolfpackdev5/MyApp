@@ -1,17 +1,23 @@
-<p>create-account works!</p>
-<form #accountForm="ngForm" name="accountForm">
+<form #accountForm="ngForm">
     <h2>Create Account</h2>
+    <p>* red denotes a required field</p>
     <label>Email:</label><br>
-    <input id="email" [(ngModel)]="email" type="text" name="email"><br>
+    <input [ngStyle]="{'border': email === '' ? '1px solid red' : '1px solid black'}"id="email" [(ngModel)]="email" type="text" name="email"
+    #accountEmail="ngModel" email="true"><br>
+    <p *ngIf="accountEmail.errors"> enter a valid email</p>
     <label>First Name:</label><br>
-    <input id="firstName" [(ngModel)]="firstName" type="text" name="firstName"><br>
+    <!--[ngStyle]="{'background-color':person.country === 'UK' ? 'green' : 'red' }"-->
+    <input [ngStyle]="{'border': firstName === '' ? '1px solid red' : '1px solid black'}" 
+    id="firstName" [(ngModel)]="firstName" type="text" name="firstName" required><br>
     <label>Last Name:</label><br>
-    <input id="lastName" [(ngModel)]="lastName" type="text" name="lastName"><br>
+    <input [ngStyle]="{'border': lastName === '' ? '1px solid red' : '1px solid black'}" 
+    id="lastName" [(ngModel)]="lastName" type="text" name="lastName" required><br>
     <label>Your Fitness Goals:</label><br>
-    <input id="bio" [(ngModel)]="bio" type="text" name="bio"><br>
+    <input [ngStyle]="{'border': bio === '' ? '1px solid red' : '1px solid black'}"
+     id="bio" [(ngModel)]="bio" type="text" name="bio" required><br>
     <label>Age:</label><br>
     <input id="age" [(ngModel)]="age" type="number" name="age"><br>
     <label>Weight (in lbs):</label><br>
     <input id="weight" [(ngModel)]="weight" type="number" name="weight"><br>
-    <button type="submit" [disabled]="accountForm.form.valid">Submit</button>
+    <button type="submit" [disabled]="!accountForm.valid" (click)="submitAccount()">Submit</button>
 </form>

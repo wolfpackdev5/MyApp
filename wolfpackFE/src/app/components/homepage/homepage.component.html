@@ -7,7 +7,7 @@
             <input id="email" [(ngModel)]="email" name="email" 
             class="email" email="true" type="email" #userEmail="ngModel"><br>
             <p *ngIf="userEmail.errors">Enter a valid email address</p>
-            <button type="submit" [disabled]="userEmail.errors" (click)="submitEmail()">Add Me!</button>
+            <button type="submit" [disabled]="userEmail.errors" (click)="submitEmail()">Join</button>
         </form>
     </div>
   </body>
