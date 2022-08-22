@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomepageService } from 'src/app/service/homepage/homepage.service';
 import { Client } from 'src/app/models/client';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-homepage',
@@ -10,8 +11,7 @@ import { Client } from 'src/app/models/client';
 export class HomepageComponent implements OnInit {
   email = ' ';
   constructor(private hps: HomepageService) {}
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
   submitEmail() : void {
     console.log(this.email);
@@ -23,7 +23,7 @@ export class HomepageComponent implements OnInit {
     } else {
       alert("not a valid email");
     }
-    window.location.reload();
+    //window.location.reload();
   }
 
 }

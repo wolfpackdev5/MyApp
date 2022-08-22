@@ -2,10 +2,12 @@
   <body>
     <h1>Subscribe to Our Mailing List for WolfPack Fitness' New Features and Promotions</h1>
     <div class="banner">
-        <form #emailForm="ngForm">
+        <form>
             <label>Email Address: </label>
-            <input id="email" ng-model name="email" class="form-control" type="email"><br>
-            <button type="submit" (click)="submitEmail()">Add Me!</button>
+            <input id="email" [(ngModel)]="email" name="email" 
+            class="email" email="true" type="email" #userEmail="ngModel"><br>
+            <p *ngIf="userEmail.errors">Enter a valid email address</p>
+            <button type="submit" [disabled]="userEmail.errors" (click)="submitEmail()">Add Me!</button>
         </form>
     </div>
   </body>
